@@ -86,8 +86,8 @@ func getAllBubblesTypes(objPath string) []string {
 	return bubbles
 }
 
-func getData(objPath string) map[string]string {
-	data := map[string]string{}
+func getData(objPath string) map[string]any {
+	data := map[string]any{}
 	objFile, _ := os.ReadFile(objPath)
 	content := strings.Split(string(objFile), "\n")[1]
 	json.Unmarshal([]byte(content), &data)
